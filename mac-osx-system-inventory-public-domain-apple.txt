@@ -1,0 +1,261 @@
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec;clear;cd;p=(1295 ' 0.5 0.25 50
+1000 15 5120 1000 25000 6 6 5 1 0 100 ' 51 25600 4 10 25 5120 102400 1000 25
+1536 450 40 500 300 85 25 20480 262144 20 2000 524288 604800 5 1024 25
+);k=({Soft,Hard}ware Memory Diagnostics Power FireWire Thunderbolt USB Bluetooth
+SerialATA Extensions Applications Frameworks PrefPane Fonts Displays PCI
+UniversalAccess InstallHistory ConfigurationProfile AirPort 'com\.apple\.' -\\t
+N\\/A
+'AES|atr|udit|msa|dnse|ax|ensh|fami|FileS|fing|ft[pw]|gedC|kdu|etS|is\.|alk|ODSA|
+|otp|htt|pace|pcas|ps-lp|rexe|rlo|rsh|smb|snm|teln|upd-[aw]|uuc|vix|webf'
+OSBundle{Require,AllowUserLoa}d
+'Mb/s:Mb/s:ms/s:KiB/s:%:total:MB:total:lifetime:sampled:per sec' 'Net in:Net
+out:I/O wait time:I/O requests:CPU usage:Open files:Memory:Mach
+ports:Energy:Energy:File opens:Forks:Failed forks:System errors' 'tsA|[ST]M[HL]'
+PlistBuddy{,' 2>&1'}' -c Print' 'Info\.plist' CFBundleIdentifier );f=('\n%s'{':
+','\n\n'}'%s\n' '\nRAM details\n%s\n' %s{' ','\n'{"${k[22]}",}}'%s\n' '%.1f GiB:
+%s\n' '\n    ...and %s more line(s)\n' '\nContents of %s\n    '"${k[22]}"'mod
+date: %s\n    '"${k[22]}"'checksum: %s\n%s\n' );c=(879294308 4071182229
+461455494 216630318 3627668074 1083382502 1274181950 1855907737 2758863019
+1848501757 464843899 2636415542 3694147963 1233118628 2456546649 2806998573
+2778718105 842973933 1383871077 1591517921 676087606 1445213025 2051385900
+3301885676 891055588 998894468 695903914 1443423563 4136085286 3374894509
+1051159591 892310726 1707497389 523110921 2883943871 3873345487 );s=(' s/[0-9A-
+Za-z._]+@[0-9A-Za-z.]+\.[0-9A-Za-
+z]{2,4}/EMAIL/g;/faceb/s/(at\.)[^.]+/\1NAME/g;/\/Shared/!s/(\/Users\/)[^
+/]+/\1USER/g;s/[-0-9A-Fa-f]{22,}/UUID/g;' ' s/^ +//;/de: S|[nst]:/p;' ' {sub(/^
++/,"")};/er:/;/y:/&&$2<'${p[4]} ' s/:$//;3,6d;/[my].+:/d;s/^ {4}//;H;${
+g;s/\n$//;/s: (E[^m]|[^EO])|x([^08]|02[^F]|8[^0])/p;} ' ' 5h;6{ H;g;/P/!p;} ' '
+($1~/^Cy/&&$3>'${p[9]}')||($1~/^Cond/&&$2!~/^N/) ' ' /:$/{ N;/:.+:/d;s/
+*://;b0'$'\n'' };/^ *(V.+ [0N]|Man).+ /{ s/ 0x.... //;s/[()]//g;s/(.+: )(.+)/
+(\2)/;H;};$b0'$'\n'' d;:0'$'\n'' x;s/\n\n//;/Apple[
+,]|Genesy|Intel|SMSC/d;s/\n.*//;/\)$/p;' ' s/^.*C/C/;H;${ g;/No th|pms/!p;} '
+'/= [^GO]/p' '{$1=""};1' ' /Of|yc/!{ s/^.+is |\.//g;p;q;} ' ' BEGIN {
+FS="\f";if(system("A1 42 83 114")) d="^'"${k[21]}"'launch(d\.peruser\.[0-
+9]+|ctl\.(Aqua|Background|System))$";} { if($2~/[1-9]/) { $2="status:
+"$2;printf("'"${f[4]}"'",$1,$2);} else if(!d||$1!~d) print $1;} ' '
+$1>1{$NF=$NF" x"$1} /\*/{if(!f)f="\n\t* Code injection"} {$1=""} 1;END{print f}
+' ' NR==2&&$4<='${p[7]}'{print $4} ' ' BEGIN{FS=":"} ($1~"wir"&&$2>'${p[22]}')
+{printf("wired %.1f\n",$2/2^18)} ($1~/P.+ts/&&$2>'${p[19]}') {printf("paged
+%.1f\n",$2/2^18)} ' '/YLD/s/=/ /p' ' { q=$1;$1="";u=$NF;$NF="";gsub(/
++$/,"");print q"\f"$0"\f"u;} ' ' /^ {6}[^ ]/d;s/:$//;/([^ey]|[^n]e):/d;/e:
+Y/d;s/: Y.+//g;H;${ g;s/ \n (\n)/\1/g;s/\n +(M[^ ]+)[ -~]+/ (\1)/;s/\n$//;/(
+{8}[^ ].*){2,}/p;} ' 's:^:/:p;' ' !/, .+:/ { print;n++;}
+END{if(n<'{${p[12]},${p[13]}}')printf("^'"${k[21]}"'.+")} ' '|uniq' ' 1;END {
+print "/L.+/Scr.+/Templ.+\.app$";print
+"/L.+/Pri.+\.plugin$";if(NR<'{${p[14]},${p[21]}}') print "^/[Sp].+|'${k[21]}'";}
+' ' /\.(framew|lproj)|\):/d;/plist:|:.+(Mach|scrip)/s/:.+//p;' '&&echo On'
+'/\.(bundle|component|framework|kext|mdimporter|plugin|qlgenerator|saver|wdgt)$/p
+p' '/\.dylib$/p' ' /Temp|emac/{next};/(etc|Preferences|Launch[AD].+)\// {
+sub(".","");print $0"$";} END { split("'"${c[*]}"'",c);for(i in c) print
+"\t"c[i]"$";} ' '
+/^\/(Ap|Dev|Inc|Prev)/d;/((iTu|ok).+dle|\.(component|mailbundle|mdimporter|plugin
+n|qlgenerator|saver|wdgt))$/p;' ' BEGIN{ FS="= "} $2 { gsub(/[()"]/,"",$2);print
+$2;} !/:/&&!$2{print "'${k[23]}'"} ' ' /^\//!d;s/^.{5}//;s/ [^/]+\//: \//p;'
+'>&-||echo No' '{print $3"\t"$1}' 's/\'$'\t''.+//p' 's/1/On/p' '/Prox.+: [^0]/p'
+'$2>'${p[2]}'{$2=$2-1;print}' ' BEGIN {
+M1='${p[16]}';M2='${p[18]}';M3='${p[8]}';M4='${p[3]}';} !/^A/{next};/%/ {
+getline;if($5<M1) o["CPU"]="CPU: user "$2"%, system "$4"%";next;}
+$2~/^disk/&&$4>M2 { o[$2]=$2": "$3" ops/s, "$4" blocks/s";next;} $2~/^(en[0-
+9]|bridg)/ { if(o[$2]) { e=$3+$4+$5+$6;if(e) o[$2]=o[$2]"; errors
+"e"/s";next;};if($4>M3||$6>M4) o[$2]=$2": in "int($4/1024)", out "int($6/1024)"
+(KiB/s)";} END { for(i in o) print o[i];} ' ' /r\[0\] /&&$NF!~/^1(0|72\.(1[6-
+9]|2[0-9]|3[0-1])|92\.168)\./ { print $NF;exit;} ' ' !/^T/ { printf
+"(static)";exit;} ' '/apsd|BKAg|OpenD/!s/:.+//p' '
+(/k:/&&$3!~/(255\.){3}0/)||(/v6:/&&$2!~/A/) ' ' BEGIN{FS=": "} /^ {10}O/ {exit}
+/^ {0,12}[^ ]/ {next} $1~"Ne"&&$2!~/^In/{print} $1~"Si" { split($2,a,"
+");if(a[1]-a[4]<'${p[5]}')
+print;};$1~"T"&&$2<'${p[20]}'{print};$1~"Se"&&$2!~"2"{print};' ' BEGIN {
+FS="\f";} { n=split($3,a,".");sub(/_2[01].+/,"",$3);print $2" "$3" "a[n]$1;} ' '
+BEGIN { split("'"${p[1]}"'",m);FS="\f";} $2<=m[$1]{next} $1==9||$1==10 { "ps -c
+-ouid -p"$4"|sed 1d"|getline $4;} $1<11 { o[$1]=o[$1]"\n    "$3" (UID
+"int($4)"): "$2;} $1==11&&$5!~"^/dev" { o[$1]=o[$1]"\n    "$3" (UID "$4") =>
+"$5" (status "$6"): "$2;} $1==12&&$5 { "ps -c -ocomm -p"$5"|sed 1d"|getline
+n;if(n) $5=n;o[$1]=o[$1]"\n    "$5" => "$3" (UID "$4"): "$2;} $1~/1[34]/ {
+o[$1]=o[$1]"\n    "$3" (UID "$4", error "$5"): "$2;} END {
+n=split("'"${k[27]}"'",u,":");for(i=n+1;i<n+4;i++)u[i]=u[n];split("'"${k[28]}"'",
+,l,":");for(i=1;i<15;i++) if(o[i])print "\n"l[i]" ("u[i]")\n"o[i];} ' ' /^ {8}[^
+]/{print} ' ' BEGIN { L='${p[17]}';} !/^[[:space:]]*(#.*)?$/ { l++;if(l<=L)
+f=f"\n    "$0;} END { F=FILENAME;if(!F) exit;if(!f) f="\n    [N/A]";"cksum
+"F|getline C;split(C, A);C=A[1];"stat -f%Sm "F|getline D;"file -b "F|getline
+T;if(T~/^Apple b/) { f="";l=0;while("'"${k[30]}"' "F|getline g) { l++;if(l<=L)
+f=f"\n    "g;};};if(T!~/^(AS.+ (En.+ )?text(, with v.+)?$|(Bo|PO).+ sh.+ text
+ex|XM)/) F=F"\n    '"${k[22]}"'"T;printf("'"${f[8]}"'",F,D,C,f);if(l>L)
+printf("'"${f[7]}"'",l-L);} ' ' s/^ ?n...://p;s/^ ?p...:/-'$'\t''/p;'
+'s/0/Off/p' 's/^.{52}(.+) <.+/\1/p' ' /id: N|te: Y/{i++} END{print i} ' '
+/kext:/ {
+split($0,a,":");p=a[1];k[S]='${k[25]}';k[U]='${k[26]}';v[S]="Safe";v[U]="true";fo
+or(i in k) { s=system("'"${k[30]}"'\\ :"k[i]" \""p"\"/*/I*|grep -qw
+"v[i]);if(!s) a[1]=a[1]" "i;};if(!a[2])
+a[2]="'"${k[23]}"'";printf("'"${f[4]}"'",a[1],a[2]);next;} !/^ *$/ {
+p="'"${k[31]}"'\\ :'"${k[33]}"' \""$0"\"/*/'${k[32]}'";p|getline
+b;close(p);if(b~/, .+:/||b=="") b="'"${k[23]}"'";printf("'"${f[4]}"'",$0,b);} '
+'/ en/!s/\.//p' ' NR>=13 { gsub(/[^0-9]/,"",$1);print;} ' '
+$10~/\(L/&&$9!~"localhost" { sub(/.+:/,"",$9);print $1": "$9|"sort|uniq";} ' '/^
++r/s/.+"(.+)".+/\1/p' 's/(.+\.wdgt)\/(Contents\/)?'${k[32]}'$/\1/p'
+'s/^.+\/(.+)\.wdgt$/\1/p' ' /l: /{ /DVD/d;s/.+: //;b0'$'\n'' };/s: /{ /
+[VY]/d;s/^ */- /;H;};$b0'$'\n'' d;:0'$'\n'' x;/APPLE [^:]+$/d;p;' '/^find: /!p;'
+' /^p/{ s/.//g;x;s/\nu/'$'\f''/;s/(\n)c/\1'$'\f''/;s/\n\n//;p;};H;' '
+BEGIN{FS="= "} /Path/{print $2} ' ' /^ *$/d;s/^ */    /;p;' ' s/^.+
+|\(.+\)$//g;p;' '1;END{if(NR<'${p[15]}')printf("^/(S|usr/(X|li))")}' ' /2/{print
+"WARN"};/4/{print "CRITICAL"};' ' /EVHF|MACR|^s/d;s/^.+: //p;' ' $3~/^[1-9][0-
+9]{0,2}(\.[1-9][0-9]{0,2}){2}$/ { i++;n=n"\n"$1"\t"$3;} END{ if(i>1)print n} '
+s/{'\.|jnl: ','P.+:'}'//;s/ +([0-9]+)(.+)/\2'$'\t\t''\1/p' ' /^ +iP.+:$/{
+s/://;b0'$'\n'' };/es: ./{ /iOS/d;s/^.+://;b0'$'\n'' };/^ +C.+ted:
++[NY]/H;/:$/b0'$'\n'' d;:0'$'\n'' x;/: +N/d;s/\n.+//p;' ' 1d;/:$/b0'$'\n''
+$b0'$'\n'' /(D|^ *Loc.+): /{ s/^.+: //;H;};/(B2|[my]): /H;d;:0'$'\n'' x;/[my]:
+[AM]|m: I.+p$|^\/Vo/d;s/(^|\n) [ -~]+//g;s/(.+)\n(.+)/\2:\1/;s/\n//g;/[ -~]/p;'
+'s/$/'$'\f''(0|-(4[34])?)$/p' '|sort'{'|uniq'{,\ -c},\ -nr} '
+s/^/'{5,6,7,8,9,10}$'\f''/;s/ *'$'\f'' */'$'\f''/g;p;' 's/:.+$//p' '|wc -l'
+/{\\.{kext,xpc,'(appex|pluginkit)'}'\/(Contents\/)?'Info,'Launch[AD].+'}'\.plist$
+$/p' 's/([-+.?])/\\\1/g;p' 's/, /\'$'\n/g;p' ' BEGIN{FS="\f"} {
+printf("'"${f[6]}"'",$1/2^30,$2);} ' ' /= D/&&$1!~/'{${k[24]},${k[29]}}'/ {
+getline d;if(d~"t") print $1;} ' ' BEGIN{FS="\t"} NR>1&&$NF!~/0x|\.([0-9]{3,}|[-
+0-9A-F]{36})$/ { print $NF"\f"a[split($(NF-1),a," ")];} ' '|tail -
+n'{${p[6]},${p[10]}} ' s/.+bus /Bus: /;s/,.+[(]/ /;s/,.+//p;' ' { $NF=$NF"
+Errors: "$1;$1="";} 1 ' ' 1s/^/\'$'\n''/;/^ +(([MNPRSV]|De|Li|Tu).+|Bus): .|d:
+Y/d;s/:$//;$d;p;' ' BEGIN { RS=",";FS=":";} $1~"name" { gsub("\"","",$2);print
+$2;} ' '|grep -q e:/' '/[^ .]/p' '{ print $1}' ' /^ +N.+: [1-9]/ { i++;} END {
+if(i) print "system: "i;} ' ' NF { print "'{admin,user}' "$NF;exit;} ' ' /se.+
+=/,/[\}]/!d;/[=\}]/!p ' ' 3,4d;/^ +D|Of|Fu| [0B]/d;s/^  |:$//g;$!H;${ x;/:/p;} '
+' BEGIN { FS=": ";} NR==1 { sub(":","");h="\n"$1"\n";} /:$/ { l=$1;next;}
+$1~"S"&&$2!~3 { getline;next;} /^ {6}I/ { i++;L[i]=l" "$2;if(i=='${p[24]}')
+exit;} END { if(i) print h;for(j=0;j<i;j++) print L[i-j];} ' ' /./H;${
+x;s/\n//;s/\n/, /g;/,/p;} ' ' {if(int($6)>'${p[25]}')printf("swap used
+%.1f\n",$6/1024)} ' ' BEGIN{FS="\""} $3~/ t/&&$2!~/'{${k[24]},${k[29]}}'/{print
+$2} ' ' int($1)>13 ' p ' BEGIN{FS="DB="} { sub(/\.db.*/,".db",$2);print $2;} '
+{,1d\;}'/r%/,/^$/p' ' NR==1{next} NR>11||!$0{exit} {print
+$NF"\f"substr($0,1,32)"\f"$(NF-7)} ' '/e:/{print $2}' ' /^[(]/{
+s/....//;s/$/:/;N;/: [)]$/d;s/\n.+ ([^ ]+).$/\1/;H;};${ g;p;} ' '1;END { exit
+"find /var/db/r*/'${k[21]}'*.{BS,Bas,Es,J,OSXU,Rem,up}*.bom -mtime -
+'${p[23]}'s"|getline;} ' ' NR<='${p[26]}' { o=o"\n"$0;next;} { o="";exit;}
+END{print o|"sed 1d"} ' );c1=(system_profiler pmset\ -g nvram fdesetup find
+syslog df vm_stat sar ps crontab kextfind top pkgutil "${k[30]}\\" echo cksum
+kextstat launchctl smcDiagnose sysctl\ -n defaults\ read stat lsbom 'mdfind -
+onlyin' env pluginkit scutil 'dtrace -q -x aggsortrev -n' security sed\ -En awk
+'dscl . -read' networksetup mdutil lsof test osascript\ -e netstat mdls route
+cat uname powermetrics );c2=(${k[21]}loginwindow\ LoginHook ' /L*/P*/loginw*'
+"'tell app \"System Events\" to get properties of login items'"
+'L*/Ca*/'${k[21]}'Saf*/E* -d 2 -name '${k[32]} '~ $TMPDIR.. \( -flags
++sappnd,schg,uappnd,uchg -o ! -user $UID -o ! -perm -600 \)' -i '-nl -print' '-F
+\$Sender -k Level Nle 3 -k Facility Req
+"'${k[21]}'('{'bird|.*i?clou','lsu|sha'}')"' "-f'%N: %l' Desktop {/,}L*/Keyc*"
+therm sysload boot-args status " -F '\$Time \$Message' -k Sender kernel -k
+Message CRne '0xdc008012|(allow|call)ing|Goog|(mplet|nabl)ed|ry HD|safe b|xpm' -
+k Message CReq 'bad |Can.t l|corru|dead|fail|GPU |hfs:
+Ru|inval|Limiti|v_c|NVDA[(]|pagin|Purg(ed|in)|error|Refus|TCON|tim(ed? ?|ing
+)o|trig|WARN' " '-du -n DEV -n EDEV 1 10' 'acrx -o%cpu,comm,ruid' "'
+syscall::recvfrom:return {@a[execname,uid]=sum(arg0)} syscall::sendto:return
+{@b[execname,uid]=sum(arg0)} syscall::open*:entry
+{@c[execname,uid,copyinstr(arg0),errno]=count()} syscall::execve:return,
+syscall::posix_spawn:return {@d[execname,uid,ppid]=count()}
+syscall::fork:return, syscall::vfork:return, syscall::posix_spawn:return
+/arg0<0/ {@e[execname,uid,arg0]=count()} syscall:::return /errno!=0/
+{@f[execname,uid,errno]=count()} io:::wait-start {self->t=timestamp} io:::wait-
+done /self->t/ { this->T=timestamp - self->t;@g[execname,uid]=sum(this->T);self-
+>t=0;} io:::start {@h[execname,uid]=sum(args[0]->b_bcount)} tick-10sec {
+normalize(@a,2560000);normalize(@b,2560000);normalize(@c,10);normalize(@d,10);nor
+rmalize(@e,10);normalize(@f,10);normalize(@g,10000000);normalize(@h,10240);printa
+a(\"1\f%@d\f%s\f%d\n\",@a);printa(\"2\f%@d\f%s\f%d\n\",@b);printa(\"11\f%@d\f%s\f
+f%d\f%s\f%d\n\",@c);printa(\"12\f%@d\f%s\f%d\f%d\n\",@d);printa(\"13\f%@d\f%s\f%d
+d\f%d\n\",@e);printa(\"14\f%@d\f%s\f%d\f%d\n\",@f);printa(\"3\f%@d\f%s\f%d\n\",@g
+g);printa(\"4\f%@d\f%s\f%d\n\",@h);exit(0);} '" '-f -pfc
+/var/db/r*/'${k[21]}'*.{BS,Bas,Es,J,OSXU,Rem,up}*.bom' '{/,}L*/Lo*/Diag* -type f
+-regex .\*[cght] ! -name .?\* ! -name \*ag \( -exec grep -lq "^Thread c" {} \; -
+exec printf \* \; -o -true \) -execdir stat -f'$'\f''%Sc'$'\f''%N -t%F {} \;'
+'/S*/*/Ca*/*xpc*' '-L /{S*/,}L*/StartupItems -type f -exec file {} +' /\
+kMDItemContentTypeTree=${k[21]}{bundle,mach-o-dylib} :Label
+"/p*/e*/{auto*,{cron,fs}tab,hosts,{[lp],sy}*.conf,mach_i*/*,pam.d/*,ssh{,d}_confi
+ig,*.local} {/p*,/usr/local}/e*/periodic/*/* /L*/P*{,/*}/com.a*.{Bo,sec*.ap}*t
+{/S*/,/,}L*/Lau*/*t .launchd.conf" list '-F "" -k Sender hidd -k Level Nle 3'
+/Library/Preferences/${k[21]}alf\ globalstate --proxy '-n get default'
+vm.swapusage --dns -get{dnsservers,info} dump-trust-settings\ {-s,-d,} -n1 '-R -
+ce -l1 -n5 -o'{'prt -stats prt','mem -stats mem'}',command,uid' -kl -l -s\ / '--
+regexp --files '${k[21]}'pkg.*' '+c0 -i4TCP:0-1023' ${k[21]}dashboard\ layer-
+gadgets '-d /L*/Mana*/$USER' '-app Safari WebKitDNSPrefetchingEnabled' '-Fcu +c0
+-l' -m 'L*/{Con*/*/Data/L*/,}Pref* -type f -size 0c -name *.plist.???????'
+kern.memorystatus_vm_pressure_level '3>&1 >&- 2>&3' '-F \$Message -k Sender
+kernel -k Message CReq "'{'n Cause: -','(a und|I/O
+|jnl_io.+)err|disk.+abo','USBF:.+bus'}'"' -name\ kMDItem${k[33]} -T\ hfs '-n get
+default' -listnetworkserviceorder :${k[33]} :CFBundleDisplayName $EUID
+{'$TMPDIR../C ','/{S*/,}'}'L*/{,Co*/*/*/L*/}{Cache,Log}s -type f -size
++'${p[11]}'M -exec stat -f%z'$'\f''%N {} \;' \ /v*/d*/*/*l*d{,.*.$UID}/* '-app
+Safari UserStyleSheetEnabled' 'L*/A*/Fi*/P*/*/a*.json' users/$USER\
+HomeDirectory '{/,}L*/{Con,Pref}* -type f ! -size 0 -name *.plist -exec plutil -
+s {} \;' ' -F "\$Time \$(Sender): \$Message" -k Sender Rne "launchd|nsurls" -k
+Level Nle 3 -k Facility R'{'ne "user|','eq "'}'console" -k Message CRne
+"[{}<>]|asser|commit - no t|deprec|done |ect
+pas|fmfd|Goog|ksho|ndum|obso|realp|rned f|/root|sandbox ex" ' getenv '/
+"kMDItemDateAdded>=\$time.now(-'${p[23]}')&&kMDItem'${k[33]}'=*"' -m\ / '' ' -F
+"\$Time \$(RefProc): \$Message" -k Sender Req launchd -k Level Nle 3 -k Message
+Rne "asse|bug|File ex|hij|Ig|Jet|key is|lid t|Plea|ship" ' print{,-disabled}\
+{system,{gui,user}/$UID} '-n1 --show-initial-usage --show-process-energy' -r ' -
+F "\$Message" -k Sender nsurlstoraged -k Time ge -1h -k Level Nle 4 -k Message
+Req "^(ER|IN)" ' '~ "kMDItemKind=Package"' );N1=${#c2[@]};for j in {0..20};do
+c2[N1+j]=SP${k[j]}DataType;done;l=({Restricted\ ,Lock,Pro}files POST Battery
+{Safari,App,{Bad,Loaded}\ kernel,Firefox}\ extensions System\ load boot\ args
+FileVault\ {2,1} {Kernel,System,Console,launchd}\ log SMC Login\ hook 'I/O per
+process' 'High file counts' UID {System,Login,Agent,User}' services
+'{load,disabl}ed {Admin,Root}\ access Font\ issues Firewall Proxies DNS TCP/IP
+Wi-Fi 'Elapsed time (sec)' {Root,User}\ crontab {Global,User}' login items'
+Spotlight Memory\ pressure Listeners Widgets Parental\ Controls Prefetching Nets
+Volumes {Continuity,I/O,iCloud,HID,HCI}\ errors {User,System}\ caches/logs XPC\
+cache Startup\ items Shutdown\ codes Heat Diagnostic\ reports Bad\
+{plist,cache}s 'VM (GiB)' Bundles{,' (new)'} Trust\ settings Activity Free\
+space Stylesheet Library\ paths{,' ('{shell,launchd}\)} Data\ packages
+);N3=${#l[@]};for i in {0..8};do l[N3+i]=${k[5+i]};done;F() { local
+x="${s[$1]}";[[ "$x" =~ ^([\&\|\<\>]|$) ]]&&{ printf "$x";return;};:|${c1[30]}
+"$x" 2>&-;printf "%s \'%s\'" "|${c1[30+$?]}" "$x";};A0() { Q=6;v[2]=1;id -G|grep
+-qw 80;v[1]=$?;((v[1]))||{ Q=7;sudo -v;v[2]=$?;((v[2]))||Q=8;};v[3]=`date
++%s`;date '+Start time: %T %D%n';printf '\n[Process started]\n\n'>&4;printf
+'Revision: %s\n\n' ${p[0]};};A1() { local c="${c1[$1]} ${c2[$2]}";shift 2;c="$c
+` while [[ "$1" ]];do F $1;shift;done`";((P2))&&{ c="sudo $c";P2=;};v=`eval
+"$c"`;[[ "$v" ]];};A2() { local c="${c1[$1]}";[[ "$c" =~ ^(awk|sed ) ]]&&c="$c
+'${s[$2]}'"||c="$c ${c2[$2]}";shift 2;local d=` while [[ "$1" ]];do F
+$1;shift;done`;((P2))&&{ c="sudo $c";P2=;};local a;v=` while read a;do eval "$c
+'$a' $d";done<<<"$v";`;[[ "$v" ]];};A3(){ v=$((`date +%s`-v[3]));};export -f A1
+A2 F;B1() { v=No;! ((v[1]))&&{ v=;P1=1;};};eval "`type -a B1|sed
+'1d;s/1/2/'`";B3(){ v[$1]="$v";};B4() { local i=$1;local j=$2;shift 2;local
+c="cat` while [[ "$1" ]];do F $1;shift;done`";v[j]=`eval "{
+$c;}"<<<"${v[i]}"`;};B5(){ v="${v[$1]}"$'\n'"${v[$2]}";};B6() { v=` paste -
+d$'\e' <(printf "${v[$1]}") <(printf "${v[$2]}")|awk -F$'\e' '
+{printf("'"${f[$3]}"'",$1,$2)} ' `;};B7(){ v=`egrep -v
+"${v[$1]}"<<<"$v"|sort`;};eval "`type -a B7|sed '1d;s/7/8/;s/-v //'`";C0() { [[
+"$v" ]]&&sed -E "$s"<<<"$v";};C1() { [[ "$v" ]]&&printf "${f[$1]}" "${l[$2]}"
+"$v"|sed -E "$s";};C2() { v=`echo $v`;[[ "$v" != 0 ]]&&C1 0 $1;};C3() { B4 0 0
+63&&C1 1 $1;};C4() { echo $'\t'"Part $((++P)) of $Q done at $((`date +%s`-v[3]))
+sec">&4;};C5() { sudo -k;pbcopy<<<"$o";printf '\n\tThe test results are on the
+Clipboard.\n\n\tPlease close this window.\n';exit 2>&-;};for i in 1 2;do eval
+D$((i-1))'() { A'$i' $@;C0;};';for j in 2 3;do eval D$((i+2*j-3))'() { local
+x=$1;shift;A'$i' $@;C'$j' $x;};';done;done;trap C5 2;o=$({ A0;D0 0 N1+1 2;D0 0
+$N1 1;B1;C2 31;B1&&! B2&&C2 32;D2 22 15 63;D0 0 N1+2 3;D0 0 N1+15 17;D4 3 0 N1+3
+4;D4 4 0 N1+4 5;D4 N3+4 0 N1+9 59;D0 0 N1+16 99;for i in 0 1 2;do D4 N3+i 0
+N1+5+i 6;done;D4 N3+3 0 N1+8 71;D4 62 1 10 7;D4 10 1 11 8;B2&&D4 18 19 53 67;D2
+11 2 12 9;D2 12 3 13 10;D2 13 32 70 101 25;D2 71 6 76 13;D2 45 20 52 66;A1 7 77
+14;B3 28;A1 20 31 111;B6 0 28 5;B4 0 0 110;C2 66;D4 70 8 15 38;D0 9 16 16 77
+45;C4;B2&&D0 35 49 61 75 76 78 45;B2&&{ D0 28 17 45;C4;};B2&&{ A1 43 85 117;B3
+29;B4 0 0 119 76 81 45;C0;B4 29 0 118 119 76 82 45;C0;    };D0 12 40 54 16 79
+45;D0 12 39 54 16 80 45;D4 74 25 77 15&&{ B4 0 8 103;B4 8 0;A2 18 74;B6 8 0 3;C3
+75;};B2&&D4 19 21 0;B2&&D4 40 10 42;D2 2 0 N1+19 46 84;D2 44 34 43 53;D2 59 22
+20 32;D2 33 0 N1+14 51;for i in {0..2};do A1 29 35+i 104+i;B3 25+i;done;B6 25 27
+5;B6 0 26 5;B4 0 0 110;C2 69;D2 34 21 28 35;D4 35 27 29 36;A1 40 59 120;B3 18;A1
+33 60 121;B8 18;B4 0 19 83;A1 27 32 39&&{ B3 20;B4 19 0;A2 33 33 40;B3 21;B6 20
+21 3;};C2 36;D4 50 38 5 68;B4 19 0;D5 37 33 34 42;B2&&D4 46 35 45 55;D4 38 0
+N1+20 43;B2&&D4 58 4 65 76 91;D4 63 4 19 44 75 95 12;B1&&{ D4 53 5 55 75 69&&D4
+51 6 58 31;D4 56 5 56 97 75 98&&D0 0 N1+7 99;D2 55 5 27 84;D4 61 5 54 75 70;D4
+14 5 14 96;D4 15 5 72 96;D4 17 5 78 96;C4;};D4 16 5 73 96;A1 13 44 74 18;C4;B3
+4;B4 4 0 85;A2 14 61 89;B4 0 5 19 102;A1 17 41 50;B7 5;C3 8;B4 4 0 88;A2 14 24
+89;C4;B4 0 6 19 102;B4 4 0 86;A2 14 61 89;B4 0 7 19 102;B5 6 7;B4 0 11 73 102;A1
+42 86 114;j=$?;for i in 0 1 2;do ((i==2&&j==1))&&break;((! j))||((i))||B2&&A1 18
+$((79+i-(i+53)*j)) 107+8*j 94 74||continue;B7 11;B4 0 0 11;C3
+$((23+i*(1+i+2*j)));D4 $((24+i*(1+i+2*j))) 18-4*j 82+i-16*j $((112+((3-i)*i-
+40*j)/2));done;D4 60 4 21 24;D4 42 14 1 62;D4 43 37 2 90 48;D4 41 10 42;D2 48 36
+47 25;A1 4 3 60&&{ B3 9;A2 14 61;B4 0 10 21;B4 9 0;A2 14 62;B4 0 0 21;B6 0 10
+4;C3 5;};D4 9 41 69 100;D2 72 21 68 35;D2 49 21 48 49;B4 4 22 57 102;A1 21 46 56
+74;B7 22;B4 0 0 58;C3 47;D4 54 5 7 75 76 69;D4 52 5 8 75 76 69;D4 57 4 64 76
+91;D2 0 4 4 84;D2 1 4 51 84;D4 21 22 9 37;D0 0 N1+17 108;D4 76 24 88;A1 23 18 28
+89;B4 0 16 22 102;A1 16 25 33;B7 16;B4 0 0 34;D1 31 47;D4 64 4 71 41;D4 65 5 87
+116 74;C4;B4 4 12 26 89 23 102;for i in {0..3};do A1 0 N1+10+i 72 74;B7 12;B4 0
+0 52;C3 N3+5+i;((i))||C4;done;A1 24 22 29;B7 12;B3 14;A2 39 57 30;B6 14 0 4;C3
+67;A1 24 75 74;B4 1 1 122||B7 12;B4 0 0 123;B3 23;A2 39 57 30;B6 23 0 4;C3 68;B4
+4 13 27 89 65;A1 24 23;B7 13;C3 73;B4 4 0 87;A2 14 61 89 20;B4 0 17;A1 26 50
+64;B7 17;C3 6;D0 0 N1+18 109;D4 7 11 6;A3;C2 39;C4;} 4>&2 2>/dev/null;);C5
