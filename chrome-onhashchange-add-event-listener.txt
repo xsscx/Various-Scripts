@@ -1,0 +1,5 @@
+['onhashchange', 'onhashchange'].forEach(function (evName) {
+    window.addEventListener(evName, function () {
+        debugger; // Chance to check everything right before the redirect occurs
+    });
+});
