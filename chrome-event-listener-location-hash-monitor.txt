@@ -1,0 +1,14 @@
+if( 'onHashChange' in window ) {
+  window.addEventListener('hashchange', getHashValue, false);
+  function getHashValue() {
+    return window.location.hash;
+  }
+}
+console.log(window.location.hash);
+window.location.hash = '#<?xml-stylesheet type="text/css" href="data:,*%7bx:expression(write(2));%7d"?>';
+console.log(window.location.hash);
+window.location.reload(true);
+function reloadPageWithHash() {
+  var initialPage = window.location.pathname;
+  window.location.replace('https://exmaple.com/#' + initialPage);
+}
