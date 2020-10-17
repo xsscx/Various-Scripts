@@ -1,0 +1,1 @@
+find /Applications/ -name "*.xpc"
